@@ -1,23 +1,37 @@
+
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 var outer = function(){
   var name = 'Tyler';
+  var inner;
   return function(){
     return 'The original name was ' + name;
   }
 }
+outer();
 //Above you're given a function that returns another function which has a closure over the name variable.
 //Invoke outer saving the return value into another variable called 'inner'.
 
   //Code Here
+var outer = function(){
+  var name = 'Tyler';
+  var inner = function(){
+    return 'The original name was ' + name;
+  }
+}
+outer();  
 
 //Once you do that, invoke inner.
 
   //Code Here
-
-
-
-//Next problem
+var outer = function(){
+  var name = 'Tyler';
+  var inner = function(){
+    return 'The original name was ' + name;
+  }
+}
+outer(inner());
+  //Next problem
 
 
 
@@ -33,6 +47,14 @@ var callFriend = function(){
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //Code Here
+var callFriend = function(){
+  var friend = 'Jake';
+  function callF(number){
+  	var number = '435-215-9248';
+    return 'Calling ' + friend + ' at ' + number;
+  }
+  return callF;
+};
 
 
 
@@ -63,7 +85,5 @@ var callFriend = function(){
   Once completed, add a second arguments that allows the function to be invoked N number of times.
   After the function has been called N number of times, console.log('STAHHP');
 */
-
-
 
 
